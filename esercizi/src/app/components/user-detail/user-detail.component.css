@@ -1,0 +1,7 @@
+.user-detail {
+  width: 200px;
+  height: 90%;
+  background-color: rgb(232, 236, 192);
+  border: solid 1px rgb(210, 113, 57);
+  margin-left: 10px;
+}

@@ -1,0 +1,5 @@
+.order-detail {
+  display: flex;
+  align-items: center;
+  background-color: rgb(136, 188, 157);
+}

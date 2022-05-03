@@ -1,0 +1,12 @@
+.order-single {
+  background-color: rgb(175, 205, 226);
+  width: 90%;
+  height: 29%;
+  margin-left: 25px;
+  margin-top: 10px;
+}
+
+.elementi {
+  display: flex;
+  justify-content: center;
+}
