@@ -1,0 +1,7 @@
+.user-list {
+  width: 50%;
+  height: 90%;
+  background-color: rgb(192, 236, 196);
+  border: solid 1px rgb(72, 108, 69);
+  margin-left: 5px;
+}
