@@ -1,5 +1,8 @@
-  <p class="text-center">app.component</p>
-  <div class="d-flex justify-content-center ">
-    <app-user-container></app-user-container>
-    <app-order-container></app-order-container>
-  </div>
+   <div class="navbar  ">
+     <button type="button" class="btn " routerLink="/users">Users</button>
+     <button type="button" class="btn " routerLink="/orders">Orders</button>
+   </div>
+   <p class="text-center">app.component</p>
+   <div class="d-flex justify-content-center">
+     <router-outlet></router-outlet>
+   </div>

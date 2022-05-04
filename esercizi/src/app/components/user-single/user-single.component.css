@@ -2,5 +2,9 @@ div {
   display: flex;
   align-items: center;
   background-color: rgb(218, 184, 122);
-  margin-right: 5px;
+  margin-top: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
 }

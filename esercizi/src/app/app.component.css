@@ -1,4 +1,12 @@
-div {
+.navbar {
+  width: 100%;
+  background-color: rgb(240, 189, 224);
   display: flex;
-  flex-direction: row;
+  justify-content: flex-start;
+}
+
+button {
+  background-color: rgb(210, 130, 224);
+
+  margin-left: 50px;
 }
