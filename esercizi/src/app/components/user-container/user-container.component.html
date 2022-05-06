@@ -1,4 +1,8 @@
 <div class="user-container">
   <p class="text-center">user-container.component</p>
-  <app-user-list></app-user-list>
+  <div class="d-flex">
+    <app-user-list [openButton]="openButton" (change)="show()"></app-user-list>
+    <app-user-detail *ngIf="openButton" (change)="show()"></app-user-detail>
+  </div>
+
 </div>
