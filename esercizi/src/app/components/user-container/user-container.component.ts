@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class UserContainerComponent implements OnInit {
 openButton: boolean = false;
-@Output() buton= new EventEmitter<void>()
+
 @Output() change=new EventEmitter<void>()
 
   constructor() { }
