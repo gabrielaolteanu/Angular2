@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CounterService } from './counter.service';
 
 @Component({
   selector: 'app-root',
@@ -6,10 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'esercizi';
- count=0;
- counter(type:string)
- {
-  type==='add'?this.count++:this.count--
+
+  constructor(public clicksCount: CounterService) {
+  }
+
+  handleClick() {
+    this.clicksCount.increment();
   }
 }
