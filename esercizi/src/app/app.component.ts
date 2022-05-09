@@ -8,10 +8,4 @@ import { CounterService } from './counter.service';
 })
 export class AppComponent {
 
-  constructor(public clicksCount: CounterService) {
-  }
-
-  handleClick() {
-    this.clicksCount.increment();
-  }
 }
