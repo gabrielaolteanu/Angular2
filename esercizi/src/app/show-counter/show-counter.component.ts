@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { CounterService } from '../counter.service';
 
 @Component({
@@ -8,6 +9,7 @@ import { CounterService } from '../counter.service';
 })
 export class ShowCounterComponent implements OnInit {
 
+ 
   constructor(public showCounter: CounterService ) { }
 increase(value: number){
   return this.showCounter.increment(value)
