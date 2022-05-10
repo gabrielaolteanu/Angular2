@@ -5,21 +5,30 @@ import { Injectable } from '@angular/core';
 })
 export class CounterService {
  
-    count = 0;
+   private counter = 0;
     constructor() { }
   
-    value(){
-      console.log(this.count)
+   public value(){
+     if(this.counter <0){
+      return console.log("Error, number can't be negative")
+     }else {
+       return this.counter
+    }
+   }
+
+  increment(value: number) {
+    this.counter += value
     }
 
-    increment() {
-    console.log(this.count++)  
-    }
-    decrement() {
-      if(this.count > 0){
-      console.log(this.count--)   
+
+   
+ decrement(value: number) {
+      if(this.counter > 0){
+      return this.counter -= value   
       }else {
-        console.log("Error, number can't be negative")
+      return  console.log("Error, number can't be negative")
       }
     }
-}
+
+    
+  }

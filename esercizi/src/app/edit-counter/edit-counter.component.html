@@ -1,5 +1,5 @@
 <div>
-  <button class="btn" (click)="incrementClick()">++</button>
-  <button class="btn" (click)="decrementClick()">--</button>
-  <input type="text">
+  <button (click)="incrementClick(amount.value)">++</button>
+  <button (click)="decrementClick(amount.value)">--</button>
+  <input type="number" [formControl]="amount">
 </div>
