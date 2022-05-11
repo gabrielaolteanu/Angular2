@@ -17,6 +17,7 @@ increase(value: number){
 decrease(value: number){
   return this.showCounter.decrement(value)
 } 
+counter$ = this.showCounter.value()
 
   ngOnInit(): void {
 
