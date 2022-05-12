@@ -1,1 +1,26 @@
-<p>shop works!</p>
+<form [formGroup]="validation">
+  <div class="d-flex">
+    <select name="beer" id="beer" *ngIf="birre$ | async as beers" class="form-select" formControlName="beer">
+      <option value="beer" *ngFor="let beer of beers">{{beer.name}}</option>
+    </select>
+
+    <select name="type" id="type" class="form-select" formControlName="type">
+      <option value="size">Small</option>
+      <option value="size">Medium</option>
+    </select>
+
+    <button class="btn btn-primary" [disabled]="validation.invalid" (click)="getBeer()">Search</button>
+  </div>
+
+</form>
+
+
+<ng-container *ngIf="beerSelect">
+  <div class="card-container">
+    <div class="card" *ngFor="let beer of beerSelect">
+      <p>Name: {{ beer.name }}</p>
+      <p>Type: {{ beer.type }}</p>
+      <p>Price: {{ beer.price }}</p>
+    </div>
+  </div>
+</ng-container>

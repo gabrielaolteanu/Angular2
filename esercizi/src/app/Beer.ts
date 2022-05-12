@@ -1,5 +1,5 @@
 import { IBeer } from "./beers";
-export const beerList: IBeer[]=[
+export const BeerList: IBeer[]=[
 {
     id:1 , 
     type:"small", 
