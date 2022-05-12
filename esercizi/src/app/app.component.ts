@@ -11,13 +11,23 @@ export class AppComponent implements OnInit {
 
   constructor(private userService: UsersService){} 
 
-  onGet():void {
-this.userService.getUsers().subscribe(
-  (response) => console.log(response),
-  () => console.log('Done')
-)
-  }
+  routeProps: { name: string; endpoint: string }[] = [];
+// onGet():void {
+// this.userService.getUsers().subscribe(
+//   (response) => console.log(response),
+//   () => console.log('Done')
+// ) }
+
   ngOnInit(): void {
-    this.onGet()
+    this.userService.getUsers().subscribe((data) => {
+      this.routeProps = Object.entries(data).map((result) => {
+        return {
+          name: result[0],
+          endpoint: result[1].Path,
+        };
+      });
+    })
+
+  //  this.onGet()
   }
 }
