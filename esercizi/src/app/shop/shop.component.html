@@ -1,4 +1,4 @@
-<form [formGroup]="validation">
+<!-- <form [formGroup]="validation">
   <div class="d-flex">
     <select name="beer" id="beer" *ngIf="birre$ | async as beers" class="form-select" formControlName="beer">
       <option value="beer" *ngFor="let beer of beers">{{beer.name}}</option>
@@ -23,4 +23,32 @@
       <p>Price: {{ beer.price }}</p>
     </div>
   </div>
-</ng-container>
+</ng-container> -->
+
+<div class="container">
+
+  <form #f="ngForm">
+    <label for="beersList">Beer:</label>
+    <select name="beers" id="beersList" class="form-control" required (click)="getId()" [(ngModel)]="name">
+      <ng-container *ngFor="let beer of beers">
+        <option value="{{ beer.name }}" id="beerSelect">{{ beer.name }}</option>
+      </ng-container>
+    </select>
+    <label for="typeList">Size :</label>
+    <select name="types" id="typeList" class="form-control" required [(ngModel)]="type">
+      <option value="small" [disabled]="type !== 'small'">Small</option>
+      <option value="medium" [disabled]="type !== 'medium'">Medium</option>
+    </select>
+    <button class="btn btn-primary" (click)="getBeer()" [disabled]="!f.form.valid">Search</button>
+  </form>
+
+  <ng-container *ngIf="beerSelect">
+    <div class="card-container">
+      <div class="card" *ngFor="let beer of beerSelect">
+        <p>Name: {{ beer.name }}</p>
+        <p>Type: {{ beer.type }}</p>
+        <p>Price: {{ beer.price }}</p>
+      </div>
+    </div>
+  </ng-container>
+</div>

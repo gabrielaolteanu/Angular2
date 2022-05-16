@@ -7,10 +7,11 @@ import { IBeer } from './beers';
   providedIn: 'root'
 })
 export class BeerService {
-beersService$:IBeer[] = BeerList
+
+private beersService$:IBeer[] = BeerList
 
  constructor() { } 
- private subject= new BehaviorSubject<IBeer[]>(this.beersService$)
+private subject= new BehaviorSubject<IBeer[]>(this.beersService$)
 public beers$= this.subject.asObservable()
  
   takeAll(): Observable<IBeer[]> {

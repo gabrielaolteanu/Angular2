@@ -11,24 +11,33 @@ import { IBeer } from '../beers';
 })
 export class ShopComponent implements OnInit {
 
-constructor(private beerService: BeerService){}
-
-  birre$= this.beerService.takeAll()
 beers!: IBeer[]
 beerSelect: IBeer[] = []
+
 name: string = '';
 type: string = '';
-getId(id: number){
+
+constructor(private beerService: BeerService){}
+ngOnInit(): void {
+  this.beerService.takeAll().subscribe(
+    data => this.beers= data
+  )
+
+  }
+
+
+getI(id: number){
   const beer =this.beerService.takeId(id)
   console.log(beer) 
   }
+
  
 validation= new FormGroup({
 beer: new FormControl('', [Validators.required]),
 type: new FormControl('', [Validators.required])
 })
 
-Type(): void {
+getId(): void {
   const beerId = this.beers.find(beer => beer.name === this.name)?.id;
 
   this.beerService.takeId(beerId!).subscribe((data) => {
@@ -51,9 +60,6 @@ getBeer(): void {
  
   
 
-  ngOnInit(): void {
   
-
-  }
 
 }
